@@ -197,9 +197,10 @@ export const ProposalView: FC<ProposalViewProps> = ({mint}) => {
             </div>
             </div> :
             <div className="">
-                <ProposalPage proposal={selectedProposal.account} backClick={backFromProposalPage} nfts={nfts}
+                {/* <ProposalPage proposal={selectedProposal.account} backClick={backFromProposalPage} nfts={nfts}
                 collectionDetails={collectionAddress} proposalDetails={selectedProposal.publicKey} 
-                metaplex={metaplex} program={program}/>
+                metaplex={metaplex} program={program}/> */}
+                <div className="">Trial</div>
             </div>
             }
         </div>
