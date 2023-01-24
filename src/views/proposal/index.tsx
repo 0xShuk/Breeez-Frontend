@@ -11,7 +11,6 @@ import useProposalStore from 'stores/useProposalStore';
 import useCollectionStore from 'stores/useCollectionStore';
 import usePartyNftStore from "stores/usePartyNftStore";
 import { CreateProposal } from "components/CreateProposal";
-import { ProposalPage } from "components/ProposalPage";
 
 export const ProposalView: FC<ProposalViewProps> = ({mint}) => {
     let [pageNum, setPageNum] = useState(0);
