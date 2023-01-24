@@ -1,20 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { BasicsView } from "../views";
+import { AdminView } from "../views";
 
-const Basics: NextPage = (props) => {
+const Admin: NextPage = (props) => {
   return (
     <div>
       <Head>
-        <title>Solana Scaffold</title>
+        <title>Breeez - Utility Suite for NFT Communities</title>
         <meta
           name="description"
           content="Basic Functionality"
         />
       </Head>
-      <BasicsView />
+      <AdminView />
     </div>
   );
 };
 
-export default Basics;
+export default Admin;
