@@ -61,7 +61,7 @@ export const CreateProfile: FC<CreateProfileProps> = ({mint, collection, identit
                 mint:nftMint,
                 token: getAssociatedTokenAddressSync(nftMint,wallet.publicKey),
                 metadata: metaplex.nfts().pdas().metadata({ mint: nftMint })
-            }).transaction();
+            });
             
             console.log(transaction);
 
