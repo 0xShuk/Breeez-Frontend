@@ -53,7 +53,7 @@ export const CreateProfile: FC<CreateProfileProps> = ({mint, collection, identit
         let signature: TransactionSignature = '';
         try {
             let nftMint = collectionNfts[0].mintAddress 
-            signature = await program.methods.createIdentity(name)
+            const transaction = program.methods.createIdentity(name)
             .accounts({
                 identityDetails,
                 collection,
@@ -61,10 +61,12 @@ export const CreateProfile: FC<CreateProfileProps> = ({mint, collection, identit
                 mint:nftMint,
                 token: getAssociatedTokenAddressSync(nftMint,wallet.publicKey),
                 metadata: metaplex.nfts().pdas().metadata({ mint: nftMint })
-            })
-            .rpc();
+            }).transaction();
+            
+            console.log(transaction);
 
-            console.log(signature);
+            signature = await transaction.rpc();
+
             notify({ type: 'success', message: 'Transaction successful!', txid: signature });
 
             setTimeout(() => {
